@@ -17,11 +17,11 @@ import os
 import json
 from typing import Any, Dict, Optional
 
-from dotenv import load_dotenv
+import streamlit as st
 from openai import OpenAI
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 
 SUBSCRIPTION_DRIVER_SYSTEM_PROMPT = """
