@@ -7,11 +7,11 @@ Created on Mon Feb 16 20:21:42 2026
 import os
 import json
 from typing import Any, Dict, Optional
-from dotenv import load_dotenv
+import streamlit as st
 from openai import OpenAI
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 ADD_CHURN_DRIVER_SYSTEM_PROMPT = """
 You are a telecom analytics narrator. Your ONLY job is to interpret the ADD-CHURN DRIVER OUTPUT JSON provided.
